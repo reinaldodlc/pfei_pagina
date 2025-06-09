@@ -1,0 +1,344 @@
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
+
+/* Estilos gerais do corpo da página */
+html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave ao clicar em links âncora */
+    /* **ALTERAÇÃO:** Ajustado para um espaçamento menor no desktop. Isso evita que o cabeçalho fixo cubra o título da seção ao rolar para a âncora. */
+    scroll-padding-top: 80px; /* Valor ajustado para desktop */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Tipografia principal */
+    margin: 0;
+    /* **ALTERAÇÃO:** Reduzido o padding superior para diminuir o espaço entre o cabeçalho fixo e o início do conteúdo principal. */
+    padding-top: 80px; /* Valor ajustado para desktop */
+    background: linear-gradient(to right, blue, #00FFFF); /* Gradiente blue e cyan */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo do cabeçalho */
+#cabecalho {
+    background-color: #2c3e50; /* Cor escura para o cabeçalho */
+    color: white;
+    padding: 20px 0; /* Mais padding superior/inferior para o conteúdo */
+    text-align: center;
+    position: fixed; /* Fixa o cabeçalho */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex; /* Adiciona Flexbox para organizar o conteúdo interno */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Container para o conteúdo principal do cabeçalho */
+.cabecalho-conteudo {
+    width: 100%; /* Ocupa a largura total do cabeçalho */
+    max-width: 900px; /* Limita a largura máxima do conteúdo */
+    padding: 0 20px; /* Padding nas laterais */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.nome-principal {
+    font-family: 'Montserrat', sans-serif; /* Tipografia diferente para o título */
+    margin: 0;
+    font-size: 2.5em;
+    padding-bottom: 10px; /* Espaço abaixo do nome */
+}
+
+/* Estilo do menu de navegação dentro do cabeçalho */
+#menu-navegacao {
+    background-color: #34495e; /* Cor ligeiramente mais clara que o cabeçalho */
+    padding: 15px 0;
+    text-align: center;
+    width: 100%; /* Ocupa toda a largura do cabeçalho */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#menu-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaço entre os itens do menu */
+}
+
+#menu-navegacao li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+#menu-navegacao li a:hover {
+    background-color: #e67e22; /* Cor de destaque ao passar o mouse */
+    border-radius: 5px;
+}
+
+/* Estilo do menu de navegação quando clicado (será adicionado via JavaScript) */
+#menu-navegacao.clicked {
+    background-color: #1a659e; /* Uma cor diferente para o menu quando clicado */
+}
+
+/* Estilo das seções */
+main {
+    max-width: 900px;
+    margin: 30px auto; /* Mantido para espaçamento entre as seções e centralização */
+    padding: 20px;
+}
+
+section {
+    background-color: #ecf0f1; /* Cor de fundo diferente para as seções */
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Animação de translação */
+}
+
+section:hover {
+    transform: translateX(10px); /* Translação ao passar o mouse */
+}
+
+section h2 {
+    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para ícones de redes sociais na seção "Sobre mim" */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #2c3e50; /* Cor dos ícones */
+    font-size: 2.5em; /* Tamanho dos ícones */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: rotate(360deg); /* Rotação ao passar o mouse */
+    color: #e67e22; /* Cor ao passar o mouse */
+}
+
+/* Estilo para envolver o conteúdo de mídia e texto */
+.content-wrapper {
+    display: flex; /* Habilita o Flexbox */
+    flex-direction: row; /* Coloca os itens lado a lado (imagem/vídeo à esquerda, texto à direita) */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    gap: 30px; /* Espaço entre a mídia e o texto */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+/* --- NOVAS REGRAS PARA MOLDURAS RETANGULARES --- */
+
+/* Estilo base para os containers de mídia (agora sem o border-radius de 50%) */
+.media-container {
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+    transition: transform 0.3s ease;
+    border-radius: 10px; /* Pequeno arredondamento nas bordas do retângulo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    /* Removido width, height, border-radius: 50% e margin do .media-container base */
+    /* Eles serão definidos nas classes específicas (.image-frame, .video-frame) */
+}
+
+.media-container:hover {
+    transform: scale(1.05); /* Um leve zoom ao passar o mouse */
+}
+
+/* Estilo para o retângulo das IMAGENS (Fotos do Reinaldo e do Livro) */
+.image-frame {
+    width: 300px; /* Largura definida para as imagens */
+    height: 400px; /* Altura definida para as imagens */
+    border: 3px solid cyan; /* Moldura cyan */
+    display: flex; /* Para centralizar a imagem dentro do frame */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-shrink: 0; /* Impede que ele encolha */
+}
+
+.image-frame img {
+    max-width: 100%; /* Garante que a imagem se ajuste à largura do container */
+    max-height: 100%; /* Garante que a imagem se ajuste à altura do container */
+    display: block; /* Remove espaçamento extra abaixo da imagem */
+    object-fit: contain; /* Redimensiona a imagem para caber no container sem cortar, mantendo a proporção */
+}
+
+/* Estilo para o retângulo do VÍDEO */
+.video-frame {
+    width: 650px; /* Largura definida para o vídeo */
+    height: 370px; /* Altura definida para o vídeo */
+    border: 3px solid cyan; /* Moldura cyan */
+    display: flex; /* Para centralizar o vídeo dentro do frame */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-shrink: 0; /* Impede que ele encolha */
+}
+
+
+/* Garante que o iframe do vídeo preencha o .video-container */
+.video-frame .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Agora a altura é controlada pelo .video-frame */
+    /* Removido padding-bottom e height: 0 para controlar diretamente com height do .video-frame */
+    overflow: hidden;
+    border-radius: 8px; /* Cantos levemente arredondados para o vídeo */
+}
+
+.video-frame .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; /* Os cantos do iframe combinam com o container */
+}
+
+/* Removidas as regras .media-container .imagem-secao e .media-container .video-container antigas */
+/* Agora as imagens e vídeos serão responsivos dentro das novas classes */
+
+
+/* Estilo para o container de texto */
+.text-container {
+    flex: 2; /* Permite que o container de texto cresça e ocupe o dobro do espaço da mídia */
+    min-width: 300px; /* Largura mínima para o container de texto antes de quebrar a linha */
+}
+
+/* Estilo para links dentro das seções */
+section a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do rodapé */
+#rodape {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Ajustes para telas menores (smartphones, por exemplo) */
+@media (max-width: 768px) {
+    html {
+        /* **ALTERAÇÃO:** Ajustado para um espaçamento menor em telas menores, considerando que o cabeçalho pode ficar mais alto. */
+        scroll-padding-top: 130px; /* Valor ajustado para telas menores */
+    }
+
+    body {
+        /* **ALTERAÇÃO:** Reduzido o padding superior para telas menores. */
+        padding-top: 130px; /* Valor ajustado para telas menores */
+    }
+
+    .nome-principal {
+        font-size: 1.8em; /* Diminui o tamanho do nome */
+    }
+
+    .social-icons {
+        gap: 15px; /* Diminui o espaçamento entre os ícones na seção */
+    }
+
+    .social-icons a {
+        font-size: 1.8em; /* Ajusta o tamanho dos ícones na seção para telas menores */
+    }
+
+    #menu-navegacao ul {
+        /* **ALTERAÇÃO:** Removido 'flex-direction: column' para manter os botões lado a lado no mobile. */
+        flex-direction: row; /* Mantém os itens em linha */
+        justify-content: space-around; /* Distribui o espaço uniformemente entre os itens */
+        gap: 10px; /* Espaço entre os botões */
+        padding: 0 10px;
+    }
+
+    #menu-navegacao li a {
+        padding: 10px 15px; /* Ajusta o padding para melhor toque no mobile */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Em telas pequenas, empilha os itens (mídia em cima, texto embaixo) */
+        align-items: center; /* Centraliza os itens quando empilhados */
+    }
+
+    /* As classes .image-frame e .video-frame se ajustarão automaticamente */
+    .image-frame,
+    .video-frame {
+        width: 100%; /* Ocupa a largura total em telas menores */
+        height: auto; /* Altura automática para manter a proporção */
+        max-width: 250px; /* Garante que a imagem não seja muito grande */
+        max-height: 650px; /* Limite de altura para a imagem em mobile */
+        /* Para o vídeo, a largura total, mas com a proporção de 16:9 ajustada */
+        /* Você pode ajustar o max-width e max-height para controlar o tamanho máximo em mobile */
+    }
+
+    .video-frame {
+        max-width: 600px; /* Mantém uma proporção razoável para o vídeo */
+        height: 300px; /* Altura padrão para o vídeo em mobile */
+    }
+
+    .image-frame img {
+        width: 100%; /* Garante que a imagem dentro do frame ocupe a largura total disponível */
+        height: auto; /* Mantém a proporção */
+        object-fit: contain; /* Garante que a imagem caiba sem corte */
+    }
+
+    .media-container .imagem-secao {
+        margin-bottom: 20px; /* Adiciona espaço abaixo da imagem quando empilhada */
+    }
+}
+
+/* Ajustes para telas bem pequenas (celulares antigos) */
+@media (max-width: 480px) {
+    html {
+        /* **ALTERAÇÃO:** Ajustado para um espaçamento menor em telas muito pequenas. */
+        scroll-padding-top: 150px; /* Valor ajustado para telas muito pequenas */
+    }
+
+    body {
+        /* **ALTERAÇÃO:** Reduzido o padding superior para telas muito pequenas. */
+        padding-top: 150px; /* Valor ajustado para telas muito pequenas */
+    }
+
+    .nome-principal {
+        font-size: 1.5em;
+    }
+
+    .social-icons {
+        gap: 10px; /* Diminui o espaçamento entre os ícones na seção */
+    }
+
+    .social-icons a {
+        font-size: 1.5em; /* Ajusta o tamanho dos ícones na seção para telas muito pequenas */
+    }
+
+    #menu-navegacao {
+        padding: 10px 0;
+    }
+
+    #menu-navegacao li a {
+        font-size: 0.9em; /* Tamanho da fonte menor para telas muito pequenas */
+        padding: 8px 10px;
+    }
+}
