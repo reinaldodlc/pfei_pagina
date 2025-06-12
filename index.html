@@ -1,110 +1,351 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página - Reinaldo D. L. C.</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-    <header id="cabecalho">
-        <div class="cabecalho-conteudo">
-            <h1 class="nome-principal">Reinaldo Campos</h1>
-            <p class="descricao-pagina">Um espaço para compartilhar paixões por filmes, livros e inspirações.</p>
-            <nav id="menu-navegacao">
-                <ul>
-                    <li><a href="#filme-que-vi">🎬Filme que vi</a>
-                    <li><a href="#livro-que-li">📚Livro que li</a></li>
-                    </li><li><a href="#sobre-mim">🙋🏿‍♂️Sobre mim</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@400;700&display=swap');
 
-    <main>
+/* Estilos gerais do corpo da página */
+html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave ao clicar em links âncora */
+    /* Ajuste o scroll-padding-top para o tamanho do seu cabeçalho fixo */
+    /* Isso garante que a seção comece abaixo do cabeçalho */
+    scroll-padding-top: 180px; /* Valor ajustado para acomodar o cabeçalho com nome e descrição */
+}
 
-        <section id="filme-que-vi">
-            <h2>🎬COMO TUDO COMEÇOU</h2>
-            <div class="content-wrapper">
-                <div class="media-container video-frame">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/hMHphmPf8fI?si=HvwHhZwCsVPtj11a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-                    <div class="text-container">
-                        <p> "Foi me mostrado em uma visão que Satanás pretendia tirar minha vida, 
-                        a fim de impedir a obra que eu estava preste a escrever; 
-                        mas anjos de Deus foram enviados em meu socorro." - Ellen G White.
-                    
-                         Hoje você tem a oportunidade de lê-lo
-                        <a href="https://f000.backblazeb2.com/file/deptos/evangelismo/impacto-esperanca/2023/livro-o-grande-conflito.pdf" target="_blank">aqui</a>
-                        , para descobrir o que o inimigo tentou impedir de sabermos, além de encher-te de ESPERANÇA de
-                        que não haverá mais morte e dor, e que todo o universo declarará que Deus é amor. 
-                        Assista ao filme completo <a href="https://youtube.com/watch?v=llVU37yjPBQ&si=K92S2R59egCSqETw" target="_blank">aqui</a>.</p>
-                    </p>
-                </div>
-            </div>
-        </section>
+body {
+    font-family: 'Roboto', sans-serif; /* Tipografia principal */
+    margin: 0;
+    /* Adicione um padding-top ao body para que o conteúdo não fique escondido atrás do cabeçalho fixo */
+    padding-top: 180px; /* Valor ajustado para acomodar o cabeçalho com nome e descrição */
+    background: linear-gradient(to right, blue, #00FFFF); /* Gradiente blue e cyan */
+    color: #333;
+    line-height: 1.6;
+}
 
-        <section id="livro-que-li">
-            <h2>📚O GRANDE CONFLITO</h2>
-            <div class="content-wrapper">
-                <div class="media-container image-frame">
-                    <img src="wallpaper-gc.png" alt="Capa do livro O Grande Conflito" class="imagem-secao">
-                </div>
-                <div class="text-container">
-                     <p>
-                        "Somente aqueles que tem fortalecido a mente com as verdades da Bíblia poderão resistir no último grande conflito. 
-                        Todos terão de passar pela prova decisiva. Obedecerei a Deus ou aos homens? O momento crítico se aproxima. 
-                        Será que nossos pés estão formados na rocha da imutável Palavra do Senhor? 
-                        Estamos preparados para permanecer firmes em defesa dos mandamentos de Deus e da fé em Jesus?"
-                     </p>
-                    <p>
-                        "O Grande Conflito deve ser amplamente divulgado. Nele contém a história do passado, do presente e do futuro. 
-                        Em seu esboço das senas finais da história da terra, ele presta um poderoso testemunho em favor da verdade." Ellen G. White.
-                    </p>  
-                    <p> Leia o livro gratuitamente 
-                        <a href="https://f000.backblazeb2.com/file/deptos/evangelismo/impacto-esperanca/2023/livro-o-grande-conflito.pdf" target="_blank">aqui</a>.
-                    </p>
-                </div>
-            </div>
-        </section>
+/* Estilo do cabeçalho */
+#cabecalho {
+    background-color: #2c3e50; /* Cor escura para o cabeçalho */
+    color: white;
+    padding: 15px 0; /* Ajuste o padding superior/inferior para o cabeçalho */
+    text-align: center;
+    position: fixed; /* Fixa o cabeçalho */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex; /* Adiciona Flexbox para organizar o conteúdo interno */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+}
 
-         <section id="sobre-mim">
-            <h2>🙋🏿‍♂️SOBRE MIM:</h2>
-            <div class="content-wrapper">
-                <div class="media-container image-frame">
-                    <img src="rei-ipae.jpg" alt="foto-reinaldo" class="imagem-secao">
-                </div>
-                <div class="text-container">
-                   <p>Olá! Meu nome é Reinaldo Campos e sou apaixonado por tecnologia, filmes e livros que me fazem pensar.</p>
-                        <p>Acredito que o conhecimento e a dedicação são ferramentas poderosas para transformar vidas.</p>
-                        <p>Gosto de aprender coisas novas e compartilhar o que descubro com outras pessoas.</p> 
-                        <p>Amo música, e amo falar de Jesus.</p>
-                        <p>Sou um eterno aprendiz e sempre buscando novos desafios!</p>
-                        <p>Me encontre nas rede sociais:</p>
-                    <div class="social-icons">
+/* Container para o conteúdo principal do cabeçalho */
+.cabecalho-conteudo {
+    width: 100%; /* Ocupa a largura total do cabeçalho */
+    max-width: 900px; /* Limita a largura máxima do conteúdo */
+    padding: 0 20px; /* Padding nas laterais */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
 
-                        <a href="https://www.linkedin.com/in/reinaldo-campos-developer/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/reinaldodlc" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.instagram.com/reinaldodlc" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/reinaldodlc" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>               
-                        <a href="https://youtube.com/@reinaldodlc" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://x.com/reinaldodlc" target="_blank" aria-label="X"><i class="fab fa-x"></i></a>
-                        <a href="https://tiktok.com/@reinaldodlc" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                       
-                    </div>
-                </div>
-            </div>
-        </section>
+.nome-principal {
+    font-family: 'Montserrat', sans-serif; /* Tipografia diferente para o título */
+    margin: 0 0 5px 0; /* Espaçamento abaixo do nome */
+    font-size: 2.8em; /* Tamanho do nome maior */
+    color: #ecf0f1;
+}
 
-    </main>
+.descricao-pagina {
+    font-size: 1.1em;
+    margin: 0 0 15px 0; /* Espaçamento abaixo da descrição */
+    color: #bdc3c7;
+}
 
-    <footer id="rodape">
-        <p>© 2025 Reinaldo D. L. C. - Todos os direitos reservados.</p>
-    </footer>
+/* Estilo do menu de navegação dentro do cabeçalho */
+#menu-navegacao {
+    background-color: #34495e; /* Cor ligeiramente mais clara que o cabeçalho */
+    padding: 12px 0; /* Ajuste o padding do menu */
+    text-align: center;
+    width: 100%; /* Ocupa toda a largura do cabeçalho */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+#menu-navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaço entre os itens do menu */
+}
+
+#menu-navegacao li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+#menu-navegacao li a:hover {
+    background-color: #e67e22; /* Cor de destaque ao passar o mouse */
+    border-radius: 5px;
+}
+
+/* Estilo do menu de navegação quando clicado (será adicionado via JavaScript) */
+#menu-navegacao.clicked {
+    background-color: #1a659e; /* Uma cor diferente para o menu quando clicado */
+}
+
+/* Estilo das seções */
+main {
+    max-width: 900px;
+    margin: 30px auto; /* Mantido para espaçamento entre as seções e centralização */
+    padding: 20px;
+}
+
+section {
+    background-color: #ecf0f1; /* Cor de fundo diferente para as seções */
+    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; /* Animação de translação */
+}
+
+section:hover {
+    transform: translateX(10px); /* Translação ao passar o mouse */
+}
+
+section h2 {
+    color: #2c3e50;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para ícones de redes sociais na seção "Sobre mim" */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #2c3e50; /* Cor dos ícones */
+    font-size: 2.5em; /* Tamanho dos ícones */
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    transform: rotate(360deg); /* Rotação ao passar o mouse */
+    color: #e67e22; /* Cor ao passar o mouse */
+}
+
+/* Estilo para envolver o conteúdo de mídia e texto */
+.content-wrapper {
+    display: flex; /* Habilita o Flexbox */
+    flex-direction: row; /* Coloca os itens lado a lado (imagem/vídeo à esquerda, texto à direita) */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    gap: 30px; /* Espaço entre a mídia e o texto */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+/* --- NOVAS REGRAS PARA MOLDURAS RETANGULARES --- */
+
+/* Estilo base para os containers de mídia (agora sem o border-radius de 50%) */
+.media-container {
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+    transition: transform 0.3s ease;
+    border-radius: 10px; /* Pequeno arredondamento nas bordas do retângulo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    /* Removido width, height, border-radius: 50% e margin do .media-container base */
+    /* Eles serão definidos nas classes específicas (.image-frame, .video-frame) */
+}
+
+.media-container:hover {
+    transform: scale(1.05); /* Um leve zoom ao passar o mouse */
+}
+
+/* Estilo para o retângulo das IMAGENS (Fotos do Reinaldo e do Livro) */
+.image-frame {
+    width: 300px; /* Largura definida para as imagens */
+    height: 400px; /* Altura definida para as imagens */
+    border: 3px solid cyan; /* Moldura cyan */
+    display: flex; /* Para centralizar a imagem dentro do frame */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-shrink: 0; /* Impede que ele encolha */
+}
+
+.image-frame img {
+    max-width: 100%; /* Garante que a imagem se ajuste à largura do container */
+    max-height: 100%; /* Garante que a imagem se ajuste à altura do container */
+    display: block; /* Remove espaçamento extra abaixo da imagem */
+    object-fit: contain; /* Redimensiona a imagem para caber no container sem cortar, mantendo a proporção */
+}
+
+/* Estilo para o retângulo do VÍDEO */
+.video-frame {
+    width: 650px; /* Largura definida para o vídeo */
+    height: 370px; /* Altura definida para o vídeo */
+    border: 3px solid cyan; /* Moldura cyan */
+    display: flex; /* Para centralizar o vídeo dentro do frame */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-shrink: 0; /* Impede que ele encolha */
+}
+
+
+/* Garante que o iframe do vídeo preencha o .video-container */
+.video-frame .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Agora a altura é controlada pelo .video-frame */
+    /* Removido padding-bottom e height: 0 para controlar diretamente com height do .video-frame */
+    overflow: hidden;
+    border-radius: 8px; /* Cantos levemente arredondados para o vídeo */
+}
+
+.video-frame .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px; /* Os cantos do iframe combinam com o container */
+}
+
+/* Estilo para o container de texto */
+.text-container {
+    flex: 2; /* Permite que o container de texto cresça e ocupe o dobro do espaço da mídia */
+    min-width: 300px; /* Largura mínima para o container de texto antes de quebrar a linha */
+}
+
+/* Estilo para links dentro das seções */
+section a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do rodapé */
+#rodape {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* --- Media Queries para Responsividade --- */
+
+/* Ajustes para telas menores (smartphones, por exemplo) */
+@media (max-width: 768px) {
+    html {
+        /* Ajustado para um espaçamento maior em telas menores, considerando que o cabeçalho pode ficar mais alto. */
+        scroll-padding-top: 200px; /* Valor ajustado para telas menores */
+    }
+
+    body {
+        /* Ajustado o padding superior para telas menores. */
+        padding-top: 200px; /* Valor ajustado para telas menores */
+    }
+
+    .nome-principal {
+        font-size: 2em; /* Diminui o tamanho do nome */
+    }
+
+    .descricao-pagina {
+        font-size: 1em;
+    }
+
+    .social-icons {
+        gap: 15px; /* Diminui o espaçamento entre os ícones na seção */
+    }
+
+    .social-icons a {
+        font-size: 1.8em; /* Ajusta o tamanho dos ícones na seção para telas menores */
+    }
+
+    #menu-navegacao ul {
+        flex-direction: column; /* Empilha os itens do menu verticalmente */
+        gap: 10px; /* Espaço entre os botões */
+        padding: 0 10px;
+    }
+
+    #menu-navegacao li a {
+        padding: 10px 15px; /* Ajusta o padding para melhor toque no mobile */
+        display: block; /* Ocupa a largura total para facilitar o clique */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Em telas pequenas, empilha os itens (mídia em cima, texto embaixo) */
+        align-items: center; /* Centraliza os itens quando empilhados */
+    }
+
+    /* As classes .image-frame e .video-frame se ajustarão automaticamente */
+    .image-frame,
+    .video-frame {
+        width: 100%; /* Ocupa a largura total em telas menores */
+        height: auto; /* Altura automática para manter a proporção */
+        max-width: 250px; /* Garante que a imagem não seja muito grande */
+        max-height: 650px; /* Limite de altura para a imagem em mobile */
+    }
+
+    .video-frame {
+        max-width: 100%; /* Para o vídeo, a largura total, mas com a proporção de 16:9 ajustada */
+        height: 200px; /* Altura padrão para o vídeo em mobile */
+    }
+
+    .image-frame img {
+        width: 100%; /* Garante que a imagem dentro do frame ocupe a largura total disponível */
+        height: auto; /* Mantém a proporção */
+        object-fit: contain; /* Garante que a imagem caiba sem corte */
+    }
+
+    .media-container .imagem-secao {
+        margin-bottom: 20px; /* Adiciona espaço abaixo da imagem quando empilhada */
+    }
+}
+
+/* Ajustes para telas bem pequenas (celulares antigos) */
+@media (max-width: 480px) {
+    html {
+        scroll-padding-top: 220px; /* Valor ajustado para telas muito pequenas */
+    }
+
+    body {
+        padding-top: 220px; /* Valor ajustado para telas muito pequenas */
+    }
+
+    .nome-principal {
+        font-size: 1.7em;
+    }
+
+    .descricao-pagina {
+        font-size: 0.9em;
+    }
+
+    .social-icons {
+        gap: 10px; /* Diminui o espaçamento entre os ícones na seção */
+    }
+
+    .social-icons a {
+        font-size: 1.5em; /* Ajusta o tamanho dos ícones na seção para telas muito pequenas */
+    }
+
+    #menu-navegacao {
+        padding: 10px 0;
+    }
+
+    #menu-navegacao li a {
+        font-size: 0.9em; /* Tamanho da fonte menor para telas muito pequenas */
+        padding: 8px 10px;
+    }
+}
